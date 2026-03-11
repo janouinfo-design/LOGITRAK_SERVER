@@ -1,0 +1,69 @@
+{
+    "version": "1.0.0",
+    "name": "logitrak",
+    "description": "xLogitrak",
+    "type": "commonjs",
+    "author": {
+        "name": "Dodji AKAKPO",
+        "email": "da@omniyat.org"
+    },
+    "imports": {
+        "#modules/*": "./src/modules/*",
+        "#utils/*": "./src/utils/*",
+        "#apis/*": "./src/apis/*"
+    },
+    "exports": {
+        "#modules/*": "./src/modules/*",
+        "#utils/*": "./src/utils/*",
+        "#apis/*": "./src/apis/*"
+    },
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "rollup:build": "rollup -c"
+    },
+    "dependencies": {
+        "@omniyat/firebasemodule": "^1.0.0",
+        "@omniyat/mailmodule": "^1.0.3",
+        "@omniyat/tomtommodule": "^1.0.2",
+        "@turf/turf": "^6.5.0",
+        "MD5": "^1.3.0",
+        "axios": "^1.6.7",
+        "bcrypt": "^5.1.1",
+        "cluster": "^0.7.7",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "date-fns": "^3.6.0",
+        "dotenv": "^16.0.3",
+        "express": "^4.19.1",
+        "express-status-monitor": "^1.3.4",
+        "hjson": "^3.2.2",
+        "install": "^0.13.0",
+        "jsonwebtoken": "^9.0.0",
+        "lodash": "^4.17.21",
+        "moment": "^2.29.4",
+        "mqtt": "^5.14.1",
+        "mssql": "^11.0.0",
+        "multer": "^1.4.5-lts.1",
+        "node-schedule": "^2.1.1",
+        "os": "^0.1.2",
+        "socket.io": "^4.7.5",
+        "swagger-jsdoc": "^6.2.8",
+        "swagger-ui-express": "^4.6.2",
+        "tedious": "^15.1.3",
+        "tedious-connection-pool": "^1.0.5",
+        "turf": "^3.0.14",
+        "winston": "^3.11.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.24.4",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-commonjs": "^25.0.7",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^15.3.0",
+        "@rollup/plugin-terser": "^0.4.4",
+        "rollup": "^4.16.1",
+        "rollup-plugin-command": "^1.1.3",
+        "rollup-plugin-copy": "^3.5.0"
+    }
+}

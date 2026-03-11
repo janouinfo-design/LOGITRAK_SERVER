@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+   <div class="d-none">
+    <button class="btn btn-icon btn-light-secondary btn-circle mr-2 d-none " id="alert_modal_lang" data-toggle="tooltip"
+        data-theme="dark" title="Alert" pg-object="Lang" pg-action="infos" pg-dialog="modal-lg"
+        pg-dialog-title="Erreur olang" pg-dialog-body="" pg-dialog-btn="btn-light-danger" pg-dialog-btn-label="Fermer"></i>
+    </button>
+    <button class="btn btn-icon btn-light-secondary btn-circle mr-2 d-none"  id="lang-dialog-btn"
+            data-toggle="tooltip" data-theme="dark" title="Supprimer" 
+            pg-object="Lang" pg-action="save_lang"
+            pg-dialog="modal-mn" pg-dialog-title="<i class='fas fa-edit text-primary'></i> <span id='lang-dialog-title'>Modification</span>" 
+            pg-dialog-body="<h3><span olang=''></span><input type='text' id='lang-input-field' class='form-control'></h3>" 
+            pg-dialog-btn="btn-primary" pg-dialog-btn-label="Modifier"><i class="fas fa-trash"></i>
+    </button>
+								
+    <button class="btn btn-icon btn-light-secondary btn-circle mr-2 d-none " id="alert-popup" data-toggle="tooltip"
+        data-theme="dark" title="Alert" pg-object="Status" pg-actionn="checkIfExist" pg-dialog="modal-mn"
+        pg-dialog-title="" pg-dialog-body="" pg-dialog-btn="btn-light-danger" pg-dialog-btn-label="Fermer"></i>
+    </button>
+
+    <button class="btn btn-icon btn-light-secondary btn-circle mr-2 d-none " id="column-modal" data-toggle="tooltip"
+        data-theme="dark" title="Icone" pg-object="Status" pg-actionn="list" pg-dialog="modal-lg" pg-dialog-title=""
+        pg-dialog-body="" pg-dialog-btn="btn-light-primary" pg-dialog-btn-label="Valider"><i class="fas fa-trash"></i>
+    </button>
+    <!-- Modal-->
+    <button class="btn" data-toggle="modal" href="#formModal">open</button>
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formModalLabel">Modal Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal" olang='close'>Close</button>
+                    <button id="formModalInfoSaver" type="button" class="btn btn-primary font-weight-bold" olang="save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   <button ps-oaction="deposit/list" ps-objects="{}" ps-oncomplet="function($result , $error){console.log($result ,$error)}">Save</button>
+   <button 
+    ps-oaction="deposit/get" 
+    ps-objects="{id: 1}" 
+    ps-oncomplet="function($result , $error){console.log($result ,$error)}">
+    Get</button>
+
+
+    <button 
+    ps-oaction="authentication/login" 
+    ps-objects="{user: docUser,password: password}" 
+    ps-oncomplet="function($result , $error){console.log($result ,$error)}">
+    Login</button>
+
+    <button 
+    ps-oaction="authentication/checkUserToken" 
+    ps-objects="{token: '/p0AkaQGbei3pUpIgaaK_U9TTiHWZqg3R:'}" 
+    ps-oncomplet="function($result , $error){console.log($result ,$error)}">
+    checkToken</button>
+    <button 
+        pg-object="Lang" pg-action="start_editing" >
+        Edit lang</button>
+
+    <button pg-object="Customer" pg-action="list" pg-data="" >Customer list</button>
+
+   <script src="js/jquery.min.js"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+   <script src="js/psCore/oAction.plugin.js"></script>
+   <script src="js/psCore/mutationScript.js"></script>
+   <script src="js/psCore/translator.js"></script>
+
+   <script src="js/mustache.min.js"></script>
+   <script src="js/index.js"></script>
+
+   <script src="js/plugins/customer.plugin.js"></script>
+   <script src="js/plugins/lang.plugin.js"></script>
+
+   <script>
+        $(document).ready(function(){
+          //     $().PSAction('oAction' , 'authentication/login' , {} , (res , err)=> {
+          //          console.log('res:' , res , err)
+          //     })
+
+              $.fn.setActionFeature()
+
+              $('body').append(`
+                <h1 olang="activate_msg">Hello world</h1>
+                <h3 olang="Articles.title">Hello world 3</h3>
+                <h3 olang="titre">Hello world 3</h3>
+              `)
+
+
+            //   console.log(/[-:-@[-`{-~\/!]/.test('titre 2'))
+              
+
+        })
+   </script>
+</body>
+</html>
